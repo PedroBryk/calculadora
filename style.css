@@ -1,9 +1,11 @@
-body{
+body {
     font-family: 'Roboto', sans-serif;
     background-color: #010B40;
+    margin: 0;
+    padding: 0;
 }
 
-.calculator{
+.calculator {
     top: 50%;
     left: 50%;
     position: absolute;
@@ -12,13 +14,15 @@ body{
     padding: 10px;
     background-color: #0E023B;
     box-shadow: 20px 15px 30px 0px rgba(211, 125, 255, 0.19);
+    width: 300px; /* Largura padrão */
+    max-width: 100%; /* Garantir que o tamanho não ultrapasse a tela */
 }
 
-table td{
+table td {
     display: inline-block;
 }
 
-.btn{
+.btn {
     margin: 3px;
     cursor: pointer;
     width: 50px;
@@ -31,38 +35,77 @@ table td{
     color: white;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: #A964CC;
 }
 
-.ac{
+.ac, .special, .igual {
     background-color: #A613E5;
 }
 
-.ac:hover{
+.ac:hover, .special:hover, .igual:hover {
     background-color: #A964CC;
 }
 
-.special{
-    background-color: #A613E5;
-}
-
-.special:hover{
-    background-color: #A964CC;
-}
-
-.igual{
-    background-color: #A613E5;
-}
-
-.igual:hover{
-    background-color: #A964CC;
-}
-
-.result{
+.result {
     height: 100px;
     color: white;
     text-align: right;
     font-size: 35px;
     word-wrap: break-word;
+}
+
+/* Media Queries para Responsividade */
+
+/* Para telas pequenas (smartphones e dispositivos móveis em modo retrato) */
+@media (max-width: 480px) {
+    .calculator {
+        width: 250px; /* Diminuir a largura para dispositivos menores */
+        padding: 15px;
+    }
+
+    .btn {
+        width: 40px;
+        height: 35px;
+        font-size: 14px; /* Ajustar o tamanho da fonte para caber melhor */
+    }
+
+    .result {
+        font-size: 28px; /* Reduzir o tamanho da fonte no resultado */
+        height: 80px;
+    }
+}
+
+/* Para telas médias (tablets) */
+@media (max-width: 768px) {
+    .calculator {
+        width: 280px; /* Largura um pouco menor em tablets */
+    }
+
+    .btn {
+        width: 45px;
+        height: 38px;
+        font-size: 15px; /* Ajuste do tamanho da fonte */
+    }
+
+    .result {
+        font-size: 32px; /* Ajuste do tamanho da fonte */
+    }
+}
+
+/* Para telas grandes (desktops e maiores) */
+@media (min-width: 1024px) {
+    .calculator {
+        width: 400px; /* Largura maior para desktops */
+    }
+
+    .btn {
+        width: 55px;
+        height: 45px;
+        font-size: 18px; /* Aumentar o tamanho da fonte em telas grandes */
+    }
+
+    .result {
+        font-size: 40px; /* Aumentar o tamanho da fonte */
+    }
 }
